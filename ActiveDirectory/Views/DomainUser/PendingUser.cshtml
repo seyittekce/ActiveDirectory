@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Onay Bekleyen Kullanıcılar";
+}
+<div class="card card-custom">
+    <div class="card-header">
+        <div class="card-title">
+            <span class="card-icon">
+                <i class="flaticon2-error text-primary"></i>
+            </span>
+            <h3 class="card-label">Onay Bekleyen Kullanıcılar</h3>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover  non-hover dataTable no-footer" id="datatable">
+            <thead>
+            <tr>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>Yetki Talebi Tipi</th>
+                <th>
+                    Logon Name
+                </th>
+                <th>Job Title</th>
+                <th>
+                    Departmant
+                </th>
+                <th>
+                    Manager
+                </th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>
+                    Action
+                </th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+<link href="~/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet"/>
+
+@section Scripts{
+    <script src="~/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <script src="~/Scripts/Addons/DomainUser/PendingUser.js"></script>
+}

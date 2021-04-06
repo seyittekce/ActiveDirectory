@@ -1,0 +1,85 @@
+﻿@model ActiveDirectory.Models.UserProperties
+@{
+    if ((bool) TempData["11"] != true)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+<div class="row">
+    <div class="col-8">
+        <div class="card card-custom card-border" id="SendMail">
+            <div class="card-body p-0">
+                <div class="card-header text-center">
+                    Merhaba,<br/>
+                    *Çağrı sistemi üzerinden açılmasını talep ettiğiniz hesap bilgileri aşağıdaki gibidir.
+                    Mail hesaplarının aktivasyon süreci zaman alacaktır, bilgilerinize.
+                </div>
+
+                <table class="table table-bordered">
+                    <tr>
+                        <td colspan="2" class="text-center" style="text-align: center">KULLANICI HESAP BİLGİLERİ </td>
+                    </tr>
+                    <tr>
+                        <td>Kullanıcı Adı Soyadı</td>
+                        <td>@Model.FirstName @Model.LastName</td>
+                    </tr>
+                    <tr>
+                        <td>Unvan</td>
+                        <td>@Model.JobTitle</td>
+                    </tr>
+                    <tr>
+                        <td>Bilgisayar Açılış Hesabı</td>
+                        <td>@Model.LogonName</td>
+                    </tr>
+                    <tr>
+                        <td>OBIS Açılış Hesabı</td>
+                        <td>Giriş yetkisi bulunmamaktadır</td>
+                    </tr>
+                    <tr>
+                        <td>OBISRAC Açılış Hesabı</td>
+                        <td>Giriş yetkisi bulunmamaktadır</td>
+                    </tr>
+                    <tr>
+                        <td>OTONET Açılış Hesabı</td>
+                        <td>Giriş yetkisi bulunmamaktadır</td>
+                    </tr>
+                    <tr>
+                        <td>Eposta Adresi Açılış Hesabı</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Eposta Adresi</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Şifre</td>
+                        <td>TCKNO bilgisi ile https://hesap.otokoc.com.tr üzerinden alınmalıdır</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card card-custom">
+            <div class="card-body">
+                <div class="card-header text-center">
+                    Bilgileri Gönder
+                </div>
+                <div class="form-group">
+                    <label>Email Adresi</label>
+                    <input type="email" class="form-control" name="Email" placeholder="Email Adresi Giriniz">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-bg-success" onclick="SendMail()">Gönder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Addons/DomainUser/DoneResult.js"></script>

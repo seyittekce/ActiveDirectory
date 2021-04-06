@@ -1,0 +1,240 @@
+.login.login-6 .login-content .wizard-nav { padding: 0; }
+
+.login.login-6 .login-content .wizard-nav .wizard-steps {
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step {
+    -webkit-transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 0;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, -webkit-box-shadow 0.15s ease;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step .wizard-wrapper {
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step .wizard-icon {
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+    align-items: center;
+    background-color: #F3F6F9;
+    border-radius: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 46px;
+    justify-content: center;
+    margin-right: 1rem;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, -webkit-box-shadow 0.15s ease;
+    width: 46px;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step .wizard-icon .wizard-check {
+    display: none;
+    font-size: 1.4rem;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step .wizard-icon .wizard-number {
+    color: #3F4254;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step .wizard-label {
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-title {
+    color: #181C32;
+    font-size: 1.24rem;
+    font-weight: 600;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-desc {
+    color: #B5B5C3;
+    font-size: 0.925rem;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-icon {
+    -webkit-transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+    background-color: #C9F7F5;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, -webkit-box-shadow 0.15s ease;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-icon .wizard-check {
+    color: #1BC5BD;
+    display: inline-block;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-icon .wizard-number { display: none; }
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-label .wizard-title { color: #B5B5C3; }
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-label .wizard-desc { color: #D1D3E0; }
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] {
+    -webkit-transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, -webkit-box-shadow 0.15s ease;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-icon {
+    -webkit-transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+    background-color: #C9F7F5;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, -webkit-box-shadow 0.15s ease;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-icon .wizard-check {
+    color: #1BC5BD;
+    display: none;
+}
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-icon .wizard-number { color: #1BC5BD; }
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-label .wizard-title { color: #181C32; }
+
+.login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-label .wizard-desc { color: #B5B5C3; }
+
+@media (min-width: 992px) {
+    .login.login-6 .login-content .login-wrapper {
+        max-width: 450px;
+        width: 100%;
+    }
+
+    .login.login-6 .login-content .login-container {
+        max-width: 700px;
+        width: 100%;
+    }
+
+    .login.login-6 .login-aside.login-aside-w {
+        max-width: 750px;
+        width: 100%;
+    }
+
+    .login.login-6 .login-aside .login-img {
+        background-size: 560px;
+        min-height: 590px !important;
+    }
+
+    .login.login-6 .login-aside .signup-img {
+        background-size: 700px;
+        min-height: 700px !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1399.98px) {
+    .login.login-6 .login-aside {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .login.login-6 .login-aside.login-aside-w {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .login.login-6 .login-aside .login-img {
+        background-size: 400px;
+        min-height: 420px !important;
+    }
+
+    .login.login-6 .login-aside .signup-img {
+        background-size: 500px;
+        min-height: 500px !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .login.login-6 .login-content .login-wrapper { width: 70%; }
+
+    .login.login-6 .login-content .wizard-nav {
+        -ms-flex-line-pack: center;
+        align-content: center;
+        padding: 0;
+    }
+
+    .login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step { margin-bottom: .5rem; }
+
+    .login.login-6 .login-content .wizard-nav .wizard-steps .wizard-step:last-child { margin-bottom: 0; }
+
+    .login.login-6 .login-aside {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .login.login-6 .login-aside .login-img {
+        background-size: 450px;
+        min-height: 500px !important;
+    }
+
+    .login.login-6 .login-aside .signup-img {
+        background-size: 380px;
+        min-height: 400px !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .login.login-6 .login-content { width: 100%; }
+
+    .login.login-6 .login-content .login-wrapper { width: 100%; }
+
+    .login.login-6 .login-content .login-container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .login.login-6 .login-content .login-form {
+        max-width: 100% !important;
+        width: 100%;
+    }
+
+    .login.login-6 .login-aside.login-aside-w {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .login.login-6 .login-aside h3 { font-size: 35px !important; }
+
+    .login.login-6 .login-aside .login-img {
+        background-size: 300px;
+        min-height: 350px !important;
+    }
+
+    .login.login-6 .login-aside .signup-img {
+        background-size: 300px;
+        min-height: 320px !important;
+    }
+}

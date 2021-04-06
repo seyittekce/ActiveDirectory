@@ -1,0 +1,98 @@
+﻿@model ActiveDirectory.Models.UserProperties
+<div class="modal-header">
+    <h5 class="modal-title">Kullanıcı Bilgileri</h5>
+</div>
+<div class="row justify-content-center py-12 px-12 py-lg-12 px-lg-12">
+    <div class="col-xl-12 col-xxl-12">
+        <div class="row justify-content-center">
+            <div class="col-xl-12">
+                <div class="dl-horizontal">
+                    <table id="excell" class="">
+                        <tr>
+                            <td class=" text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase">Ad</td>
+                            <td>@Model.FirstName</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase ">Soyad</td>
+                            <td>@Model.LastName</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase ">Tam Ad</td>
+                            <td>@Model.DisplayName</td>
+                        </tr>
+                        <tr>
+                            <td class="text-dark text-uppercase text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase ">Kullanıcı Giriş Adı(Logon Name)</td>
+                            <td>@Model.LogonName</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase ">Telefon Numarası</td>
+                            <td>@Model.TelephoneNumber</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase  text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase">Ofis</td>
+                            <td>@Model.Office</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase ">web Sitesi</td>
+                            <td>@Model.WebPage</td>
+                            >
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase ">Fax Numarası</td>
+                            <td>@Model.FaxNumber</td>
+                        </tr>
+                        <tr>
+                            <td class="text-dark text-uppercase text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase ">Adres-Sokak</td>
+                            <td>@Model.Street</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase ">Şehir</td>
+                            <td>@Model.City</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase  text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase">Posta Kodu</td>
+                            <td>@Model.ZipCode</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase  text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase">TC No</td>
+                            <td id="EmpNubmer">@Model.EmployeNumber</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase ">Diğer Telefon Numarası</td>
+                            <td>@Model.OtherPhoneNumber</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase  text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase">İş Alanı</td>
+                            <td>@Model.JobTitle</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase ">Departman</td>
+                            <td>@Model.Department</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-dark text-uppercase  text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg text-dark text-uppercase">Şirket</td>
+                            <td>@Model.Company</td>
+                        </tr>
+                    </table>
+                    <hr/>
+                </div>
+                <p>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div id="buttons">
+                                <button class="btn btn-primary float-right" id="OnaylaButton" onclick="IslemYapS(@Model.ID, @Model.EmployeNumber)">Onayla</button>
+                                <a class="btn btn-bg-warning text-white float-right " id="Duzenles" style="display: none" onclick="Duzenle(@Model.ID)">Düzenle</a>
+                            </div>
+                            <select class="form-control form-control-solid form-control-lg col-11" onchange="DuzeltButton()" name="durum" id="durum">
+                                <option value="1">Onayla</option>
+                                <option value="2">Red</option>
+                                <option value="3">Hatalı</option>
+                            </select>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Addons/DomainUser/Islem.js"></script>

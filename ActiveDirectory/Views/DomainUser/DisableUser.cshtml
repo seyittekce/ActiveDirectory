@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Kullanıcı Devre Dışı Bırak";
+}
+<div class="card card-custom">
+    <div class="card-header">
+        <div class="card-title">
+            <span class="card-icon">
+                <i class="flaticon2-error text-primary"></i>
+            </span>
+            <h3 class="card-label">Devre Dışı Bırak</h3>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover table-bordered table-responsive table-sm" id="datatable">
+            <thead>
+            <tr>
+                <th></th>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    Logon Name
+                </th>
+                <th>
+                    Job Title
+                </th>
+                <th>
+                    Department
+                </th>
+                <th>
+                    Manager
+                </th>
+                <th>
+                    OU
+                </th>
+                <th>Last Logon Time</th>
+            </tr>
+            </thead>
+        </table>
+
+    </div>
+</div>
+<link href="~/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet"/>
+
+@section Scripts{
+
+    <script src="~/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <script src="~/Scripts/Addons/DomainUser/DisableUser.js"></script>
+
+}
+
+@if (TempData["disable"] != null)
+{
+    <script>
+        Swal.fire({
+            icon: 'Success',
+            title: 'Kullanıcı Devre Dışı Bırakıldı'
+        })
+    </script>
+}

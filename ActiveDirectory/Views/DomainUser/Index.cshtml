@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Tüm Kullanıcılar";
+}
+<style>
+    #dataTable_wrapper { overflow: auto; }
+</style>
+<div class="card card-custom ">
+    <div class="card-header">
+        <div class="card-title">
+            <span class="card-icon">
+                <i class="flaticon2-error text-primary"></i>
+            </span>
+            <h3 class="card-label">Tüm Kullanıcılar</h3>
+        </div>
+    </div>
+    <div class="card-body">
+        <div id="button-cont" class=""></div>
+        <table class="table table-hover table-bordered table-sm  table-responsive" id="datatable">
+            <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+
+                <th>
+                    Logon Name
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Department
+                </th>
+                <th>
+                    Manager
+                </th>
+                <th>
+                    OU
+                </th>
+                <th>Last Logon Time</th>
+                <th></th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+<link href="~/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet"/>
+
+<script src="~/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+<script src="~/Scripts/Addons/DomainUser/Index.js"></script>
+
+@if (TempData["olusturuldu"] != null)
+{
+    <script>
+        Swal.fire({
+            icon: 'Success',
+            title: 'Kullanıcı Onaya gönderildi'
+        })
+    </script>
+}

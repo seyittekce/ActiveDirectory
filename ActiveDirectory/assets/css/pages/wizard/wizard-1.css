@@ -1,0 +1,143 @@
+.wizard.wizard-1 .wizard-nav .wizard-steps {
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+}
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step {
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+}
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label {
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+}
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon {
+    color: #B5B5C3;
+    font-size: 3.75rem;
+}
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon svg g [fill] {
+    -webkit-transition: fill 0.3s ease;
+    fill: #B5B5C3;
+    transition: fill 0.3s ease;
+}
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon svg:hover g [fill] {
+    -webkit-transition: fill 0.3s ease;
+    transition: fill 0.3s ease;
+}
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-title {
+    color: #7E8299;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+}
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow {
+    color: #7E8299;
+    font-size: 1.25rem;
+}
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow.last { display: none; }
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-label .wizard-icon, .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-label .wizard-icon { color: #3699FF; }
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-label .wizard-icon svg g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-label .wizard-icon svg g [fill] {
+    -webkit-transition: fill 0.3s ease;
+    fill: #3699FF;
+    transition: fill 0.3s ease;
+}
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-label .wizard-icon svg:hover g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-label .wizard-icon svg:hover g [fill] {
+    -webkit-transition: fill 0.3s ease;
+    transition: fill 0.3s ease;
+}
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-label .wizard-title, .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-label .wizard-title { color: #3699FF; }
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-arrow, .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-arrow { color: #3699FF; }
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-arrow svg g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-arrow svg g [fill] {
+    -webkit-transition: fill 0.3s ease;
+    fill: #3699FF;
+    transition: fill 0.3s ease;
+}
+
+.wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="done"] .wizard-arrow svg:hover g [fill], .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step[data-wizard-state="current"] .wizard-arrow svg:hover g [fill] {
+    -webkit-transition: fill 0.3s ease;
+    transition: fill 0.3s ease;
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon { font-size: 3.75rem; }
+
+    .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-title { margin-top: 0.75rem; }
+
+    .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow { font-size: 1.1rem; }
+}
+
+@media (max-width: 767.98px) {
+    .wizard.wizard-1 .wizard-nav .wizard-steps {
+        -ms-flex-direction: column;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        flex-direction: column;
+    }
+
+    .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step {
+        -ms-flex-direction: row;
+        -ms-flex-pack: justify;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -webkit-box-pack: justify;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+
+    .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label {
+        -ms-flex-align: center;
+        -ms-flex-direction: row;
+        -webkit-box-align: center;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-label .wizard-icon {
+        font-size: 1.5rem;
+        margin-right: 1.25rem;
+    }
+
+    .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow { font-size: 1rem; }
+
+    .wizard.wizard-1 .wizard-nav .wizard-steps .wizard-step .wizard-arrow.last { display: block; }
+}

@@ -1,0 +1,176 @@
+﻿@using ActiveDirectory.Actions
+@model ActiveDirectory.Models.UserProperties
+@{
+    if (TempData["layout"] != null)
+    {
+        Layout = "~/Views/Shared/_UserLayout.cshtml";
+    }
+}
+<div class="card card-custom">
+    <div class="card-header text-center">
+        <div class="card-title">
+            <h3 class="card-label">Kullanıcı Oluştur</h3>
+        </div>
+    </div>
+    <div class="card-body">
+        @using (Ajax.BeginForm("CreateUser", "DomainUser", "", new AjaxOptions {HttpMethod = "POST", OnBegin = "showLoading()", OnSuccess = "Done()"}, new {@class = "form fv-plugins-bootstrap fv-plugins-framework", id = "kt_form"}))
+        {
+            if (Model != null)
+            {
+                @Html.HiddenFor(model => model.ID)
+            }
+            <div class="form-group  row">
+                <label class="col-form-label text-right col-lg-3 col-sm-12">Yetki Talebi Tipi</label>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <select name="YetkiTT" id="YetkiTT" class="form-control select form-control-solid form-control-lg">
+                        <option value="0">OTOKOÇWEB ve PC hesabı</option>
+                        <option value="1">E-Mail Hesabı</option>
+                        <option value="2">OBIS</option>
+                        <option value="3">Otonet Hesabı</option>
+                        <option value="5">Bentaş</option>
+                        <option value="6">Dijital Arşiv(Paperwork)</option>
+                        <option value="7">E-Fatura</option>
+                        <option value="8">E-Mail</option>
+                        <option value="9">File-Server</option>
+                        <option value="10">OTOKOÇWEB Sayfa İzinleri</option>
+                        <option value="11">Telefon Sistemi(Genel Müdürlük)</option>
+                        <option value="12">USB Yetki Talebi</option>
+                        <option value="13">Volvo/EfesPro</option>
+                        <option value="14">VPN Hesabı</option>
+                        <option value="15">Yetki İptali</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label text-right col-lg-3 col-sm-12">First Name</label>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    @Html.EditorFor(model => model.FirstName, new {htmlAttributes = new {@class = "form-control form-control-solid form-control-lg"}})
+                    <span class="form-text text-muted">FirstName</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label text-right col-lg-3 col-sm-12">Last Name</label>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    @Html.EditorFor(model => model.LastName, new {htmlAttributes = new {@class = "form-control form-control-solid form-control-lg"}})
+                    <span class="form-text text-muted">Last Name</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label text-right col-lg-3 col-sm-12">Employee Number</label>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    @Html.EditorFor(model => model.EmployeNumber, new {htmlAttributes = new {@class = "form-control form-control-solid form-control-lg", type = "number"}})
+                    <span class="form-text text-muted">Employee Number</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label text-right col-lg-3 col-sm-12">Other Phone Number</label>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    @Html.EditorFor(model => model.OtherPhoneNumber, new {htmlAttributes = new {@class = "form-control form-control-solid form-control-lg"}})
+                    <span class="form-text text-muted">Other Phone Number</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label text-right col-lg-3 col-sm-12">Company</label>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <select name="Company" id="Company" onchange="GetCity()" class="form-control form-control-solid form-control-lg">
+                        @foreach (var item in ViewBag.company)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select>
+                    <span class="form-text text-muted">Company</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label text-right col-lg-3 col-sm-12">City</label>
+                <div class="col-lg-9 col-md-9 col-sm-12 ">
+                    <div class=" spinner-primary spinner-right" id="CitySpinner">
+                        <select name="City" id="City" onchange="GetManager()" class="form-control form-control-solid form-control-lg ">
+                        </select>
+                    </div>
+                    <span class="form-text text-muted">City</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label text-right col-lg-3 col-sm-12">Similar User</label>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div class=" spinner-primary spinner-right" id="SimilarSpinner">
+                        <select class="form-control form-control-solid form-control-lg" id="Group" name="Group">
+                        </select>
+                    </div>
+                    <span class="form-text text-muted">Similar User</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label text-right col-lg-3 col-sm-12">Manager</label>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div class="spinner-primary spinner-right" id="ManagerSpinner">
+                        <select class="form-control  form-control-solid form-control-lg" id="Manager" name="Manager">
+                        </select>
+                    </div>
+                    <span class="form-text text-muted">Manager</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 ml-lg-auto">
+                    @if (Model != null)
+                    {
+                        <button type="submit" class="btn btn-success font-weight-bold text-uppercase px-9 py-4">Düzenle</button>
+                    }
+                    else
+                    {
+                        if (Login.IsAdmin())
+                        {
+                            <button type="submit" class="btn btn-success font-weight-bold text-uppercase px-9 py-4">Kullanıcıyı Ekle</button>
+                        }
+                        else
+                        {
+                            <button type="submit" class="btn btn-success font-weight-bold text-uppercase px-9 py-4">Onaya Gönder</button>
+                        }
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@if (TempData["olusturuldu"] != null)
+{
+    <script>
+        Swal.fire({
+            title: "Kullanıcı Onaya Gönderildi",
+            icon: "success",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            showConfirmButton: false,
+            timer: 1000
+        });
+    </script>
+}
+
+<script src="~/Scripts/Addons/DomainUser/Create.js"></script>
+<script>
+    function Done() {
+        var GetId = document.getElementsByName('EmployeNumber')[0].value;
+        $.ajax({
+            url: '/DomainUser/DoneResult',
+            type: "Get",
+            data: {
+                ID: GetId,
+            },
+            beforeSend: function() {
+
+                showLoading();
+            },
+            success: function(result) {
+                $("#RenderCrate").html(result);
+            },
+            complete: function(aa) {
+                $("#GlobalModal").modal("show");
+                hideSwall();
+            },
+            error: function(request, error) {
+                alert("Request: " + JSON.stringify(request));
+            }
+        });
+    }
+</script>
